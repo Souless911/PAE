@@ -1,0 +1,135 @@
+@mixin text-format-bar {
+    background-color: purple;
+    font-size: 1.5cm;
+    color: white;
+    padding: 25px 50px;
+    justify-content: left;
+}
+
+@mixin info_basica {
+    margin: 60px auto;
+    max-width: 1700px;
+    padding: 20px;
+}
+
+@mixin text-format-history {
+    color: grey;
+    font-size: 23px;
+    text-align: justify;
+}
+
+@mixin radio {
+    border-radius: 20px;
+}
+
+@mixin align-center {
+    text-align: center
+}
+
+.barra-informativa {
+    @include text-format-bar;
+
+    a {
+        grid-column: span 3;
+        @include align-center;
+    }
+}
+
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+
+body {
+    background-color: lavender;
+}
+
+main {
+    @include info_basica;
+
+    .info-story-1 {
+        @include text-format-history;
+        grid-column: 2/ span 10;
+    }
+
+    h2 {
+        grid-column: span 12;
+        @include align-center;
+        color: #125b0D;
+        font-size: 33px;
+    }
+
+    img {
+        @include radio;
+        grid-column: span 6;
+        width: 100%;
+        height: auto;
+    }
+
+    div {
+        @include radio;
+        background-color: #9ac1e6;
+        grid-column: 8 / span 4;
+        padding: 80px;
+        text-align: justify;
+        height: 50%;
+    }
+
+    h1 {
+        @include align-center;
+    }
+
+    h3 {
+        @include align-center;
+        grid-column: 2 / span 4;
+    }
+
+    .end {
+        grid-column: 3 / span 4;
+    }
+
+    table {
+        grid-column: span 12;
+
+        td {
+            grid-column: span 1;
+            @include align-center;
+        }
+    }
+}
+
+@media screen and (max-width:1300px) {
+    main {
+        div {
+            grid-column: 7 /span 5;
+            height: 80%;
+        }
+    }
+}
+@media screen and (max-width:1024px){
+    main{
+        div{
+            padding:20px;
+            height: 60%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 780px) {
+main{
+    img{
+        width: 0%;
+    }
+    div{
+        grid-column: span 12;
+        height: 90%;
+    }
+    h2{
+        color:red;
+        font-size:44px;
+    }
+}
+
+}
