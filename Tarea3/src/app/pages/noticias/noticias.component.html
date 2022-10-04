@@ -1,0 +1,18 @@
+<h2>Listado de Noticias</h2>
+<form (submit)="buscar()">
+  <input type="text" name="buscar" placeholder="Buscar..." [(ngModel)]="search">
+  <button [disabled]="!search">Buscar</button>
+</form>
+
+<p *ngIf="cargando">Cargando....</p>
+
+<h2>Resultados de {{lastSearch | myUpperCase}}</h2>
+
+<div class="panel">
+    <div>
+        <app-noticiasph (nombre)="selectNoticia($event)" [noticia]="noticias" [current]="current"> </app-noticiasph>
+    </div>
+    <div>
+      <app-noticiasdetails [noticia]="current" (onClear)="clearCurrent()"></app-noticiasdetails>
+    </div>
+</div>
