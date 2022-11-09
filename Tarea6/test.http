@@ -1,0 +1,43 @@
+@host=http://localhost:5000/users
+
+POST {{host}}/postone
+Content-Type: application/json
+
+    {
+        "id":"entrando",
+        "descripcion":"asdfasdf"
+    }
+
+
+###send request
+GET {{host}}/getone
+
+###send request
+PUT {{host}}/putone
+Content-Type: application/json
+
+{
+    "name": "string",
+    "plot": "improved"
+}
+
+
+###send request
+DELETE {{host}}/delete
+Content-Type: application/json
+
+    {
+        "test":"entrando",
+        "name":"bejarano"
+    }
+
+
+###send request
+POST {{host}}/login
+Content-Type: application/json
+
+    {
+        "email":"orozco.emilio@hotmail.com",
+        "password":"password",
+        "name":"eMatsu98"
+    }
